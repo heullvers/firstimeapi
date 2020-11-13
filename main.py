@@ -8,7 +8,7 @@ def getDados():
     url = 'https://www.flashscore.com.br/'
 
     options = webdriver.ChromeOptions()
-    #options.headless = True
+    options.headless = True
     driver = webdriver.Chrome(options=options)
     driver.get(url)
 
@@ -97,7 +97,7 @@ def getDados():
             
             situacao = jogo.find('div', class_="event__stage")
             if(situacao):
-                if(situacao.text != 'Encerrado'):
+                if((situacao.text != 'Encerrado') and (situacao.text != 'Adiado')):
                     link_base = 'https://www.flashscore.com.br/jogo/'  
                     link_complementar_estatistica = '/#estatisticas-de-jogo;1'
                     link_complementar_odds = '/#comparacao-de-odds;1x2-odds;1-tempo'
@@ -115,6 +115,7 @@ def getDados():
 
                     ##Variável time_mandante, time_visitante
                     times = jogo.find_all('div', class_="event__participant")
+                    
                     time_mandante = times[0].text
                     time_visitante = times[1].text
 
@@ -122,6 +123,7 @@ def getDados():
                     valores = placar.find_all('span')
 
                     #Variável gols_time_mandante, gols_time_visitante
+                    
                     gols_time_mandante = valores[0].text
                     gols_time_visitante = valores[1].text
 
@@ -135,13 +137,7 @@ def getDados():
                     json['linkEstatistica'] = link_jogo_estatistica
                     json['linkOdds'] = link_jogo_odds
                     jogos_em_andamento.append(json)
-                    print(json)
-                    print()
         i += 1
     return jogos_em_andamento
 
-
-dados = getDados()
-
-#html = driver.execute_script("return document.documentElement.outerHTML")
-#driver.quit()
+resultados = getDados()
