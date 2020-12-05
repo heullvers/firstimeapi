@@ -7,7 +7,7 @@ import time
 app = Flask(__name__)
 scheduler = APScheduler()
 
-dados = ""
+dados = {}
 
 def atualiza():
     global dados

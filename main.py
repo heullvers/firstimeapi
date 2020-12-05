@@ -97,7 +97,7 @@ def getDados():
             
             situacao = jogo.find('div', class_="event__stage")
             if(situacao):
-                if((situacao.text != 'Encerrado') and (situacao.text != 'Adiado')):
+                if((situacao.text != 'Encerrado') and (situacao.text != 'Adiado') and (situacao.text != 'Atrasado')):
                     link_base = 'https://www.flashscore.com.br/jogo/'  
                     link_complementar_estatistica = '/#estatisticas-de-jogo;1'
                     link_complementar_odds = '/#comparacao-de-odds;1x2-odds;1-tempo'
