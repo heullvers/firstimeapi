@@ -164,9 +164,9 @@ def verificaLink(link):
             
             return False
 
-    fotosTimes = soup.findAll('a', class_="participant-imglink")
-    for team in fotosTimes: 
-        print(team)
+    # fotosTimes = soup.findAll('a', class_="participant-imglink")
+    # for team in fotosTimes: 
+    #     print(team)
     return False
 
 
@@ -503,9 +503,9 @@ def maquina():
 
 def predizer(dicionario):
 
-    dicionario = {'Posse de bola': ['60', '40'], 'Tentativas de gol': ['3', '1'], 'Finalizações': ['2', '1'], 'Chutes fora': ['1', '0'], 
-    'Escanteios': ['1', '0'], 'Impedimentos': ['0', '3'], 'Defesas do goleiro': ['1', '2'], 'Faltas': ['2', '5'], 'Ataques': ['37', '28'], 
-    'Ataques Perigosos': ['26', '13'], 'Cartões vermelhos': ['0', '0'], 'oddCasa': '2.10', 'oddEmpate': '2.87', 'oddVisitante': '4.00', 'diferencaGols': 0}
+    # dicionario = {'Posse de bola': ['60', '40'], 'Tentativas de gol': ['3', '1'], 'Finalizações': ['2', '1'], 'Chutes fora': ['1', '0'], 
+    # 'Escanteios': ['1', '0'], 'Impedimentos': ['0', '3'], 'Defesas do goleiro': ['1', '2'], 'Faltas': ['2', '5'], 'Ataques': ['37', '28'], 
+    # 'Ataques Perigosos': ['26', '13'], 'Cartões vermelhos': ['0', '0'], 'oddCasa': '2.10', 'oddEmpate': '2.87', 'oddVisitante': '4.00', 'diferencaGols': 0}
 
     oddMandante = float(dicionario['oddCasa'])
     oddEmpate = float(dicionario['oddEmpate'])
